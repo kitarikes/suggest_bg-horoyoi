@@ -1,0 +1,5 @@
+*.html linguist-documentation
+*.mako linguist-documentation
+*.js linguist-documentation
+*.css linguist-documentation
+*.ipynb linguist-documentation

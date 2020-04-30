@@ -1,3 +1,11 @@
+<h2>🎈about</h2>
+        <p>ボードゲームとほろよいを１つずつ勧めてくれるwebアプリです。本当に暇なときに使ってみてください！<br>※このwebアプリは全てpythonで作成しました。<br>（バックエンド: Flask, インフラ: heroku, webサイトからのデータ収集: beautifulsoap, 画像分析: numpy, pandas, scikitlearnなど）</p>
+        <h2>🎲ボードゲーム</h2>
+        <p>全てのボードゲームは<a href="https://boardgamearena.com/">ボードゲームアリーナ</a>という、オンラインでかつ無料で登録できるサイトから取得しました。なので、お家で友人とお酒を飲みながらプレイすることが可能です。自粛にピッタリですね。</p>
+        <h2>🍸ほろよい</h2>
+        <p>ボードゲームの画像、ほろよいの画像のそれぞれから代表色を抽出し、ボードゲーム毎に、r,g,b値の差の絶対値が最も少ないようなほろよいの味を登録してあります。<br>具体的な手法としては、まず画像を画素ごとにr,g,b値に変換し、k-平均法という手法を使い５色に分類します。その後、選ばれた５色の中で最も、サンプル数が多い色を１つ選び、それを代表色としました。
+          詳しくは<a href="https://github.com/kitarikes/suggest_bg-horoyoi/blob/master/analyze_image/example_get_main_color.ipynb">こちら</a>
+
 ## 参考
 - [Pythonで画像からメインカラーを抽出する](https://qiita.com/simonritchie/items/396112fb8a10702a3644)
 - [Python OpenCV の cv2.imread 及び cv2.imwrite で日本語を含むファイルパスを取り扱う際の問題への対処について](https://qiita.com/SKYS/items/cbde3775e2143cad7455)
