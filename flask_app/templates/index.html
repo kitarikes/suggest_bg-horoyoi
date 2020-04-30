@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content%}
+
+
+<div class='mx-auto' id='content1'>
+  <div class="card text-center">
+    <div class="card-header bg-dark text-white">
+      ボードゲームサジェスター
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">175個のボードゲームの中からランダムで１つ提案します！</h4>
+      <p class="card-text">おまけに、ゲームに合いそうな「ほろよい」も一つだけ提案しますよ...🧙‍♂️</p>
+      <form action="/", method="POST">
+      <button class="btn btn-primary" type="submit">今日のゲームは...？</button>
+    </form>
+    </div>
+    <div class="card-footer text-muted">
+      <a href="https://github.com/kitarikes/suggest_bg-horoyoi" style="color: black;"><i class="fab fa-github"></i></a><br>
+      <a href="https://twitter.com/search?q=%23%E3%83%8F%E3%83%83%E3%82%AF%E3%83%84%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3&src=typed_query" style="font-size:12px;">#ハックツハッカソン</a>
+    </div>
+  </div>
+</div>
+<div class='mx-auto', style="width: 65px;margin-top: 30px;">
+  <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+    detail
+  </button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">detail！</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>🎈about</h5>
+        <p>ボードゲームとほろよいを１つずつ勧めてくれるwebアプリです。本当に暇なときに使ってみてください！<br>※このwebアプリは全てpythonで作成しました。<br>（バックエンド: Flask, インフラ: heroku, webサイトからのデータ収集: beautifulsoap, 画像分析: numpy, pandas, scikitlearnなど）</p>
+        <h5>🎲ボードゲーム</h5>
+        <p>全てのボードゲームは<a href="https://boardgamearena.com/">ボードゲームアリーナ</a>という、オンラインでかつ無料で登録できるサイトから取得しました。なので、お家で友人とお酒を飲みながらプレイすることが可能です。自粛にピッタリですね。</p>
+        <h5>🍸ほろよい</h5>
+        <p>ボードゲームの画像、ほろよいの画像のそれぞれから代表色を抽出し、ボードゲーム毎に、r,g,b値の差の絶対値が最も少ないようなほろよいの味を登録してあります。<br>具体的な手法としては、まず画像を画素ごとにr,g,b値に変換し、k-平均法という手法を使い５色に分類します。その後、選ばれた５色の中で最も、サンプル数が多い色を１つ選び、それを代表色としました。
+          詳しくは<a href="https://github.com/kitarikes/suggest_bg-horoyoi/blob/master/analyze_image/example_get_main_color.ipynb">こちら</a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

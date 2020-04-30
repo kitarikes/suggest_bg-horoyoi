@@ -1,0 +1,28 @@
+@media screen and (max-width: 480px) {
+  #content1 {
+    width: 100%;
+  }
+
+  #content2 {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  #content1{
+    width: 680px;
+    margin-top: 30px;
+  }
+
+  #content2 {
+    max-width: 680px;
+  }
+
+  #content3 {
+    margin-left: 50px !important;
+  }
+/*
+  #content4 {
+    margin-left:-20px;
+  }*/
+}
